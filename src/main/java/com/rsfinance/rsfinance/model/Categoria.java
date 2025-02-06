@@ -3,12 +3,34 @@ package com.rsfinance.rsfinance.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Categoria {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String nome;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
+
+    @Column(name="criado_em", nullable = false, updatable = false)
     private LocalDate criadoEm;
+
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     private List<Transacao> transacoes;
 
     //Getters e Setters

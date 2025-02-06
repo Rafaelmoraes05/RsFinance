@@ -16,11 +16,11 @@ import com.rsfinance.rsfinance.service.TransacaoService;
 
 @RestController
 @RequestMapping("/transacoes")
-public class TransacaoCategoria {
+public class TransacaoController {
 
     private final TransacaoService transacaoService;
 
-    public TransacaoCategoria(TransacaoService transacaoService) {
+    public TransacaoController(TransacaoService transacaoService) {
         this.transacaoService = transacaoService;
     }
 

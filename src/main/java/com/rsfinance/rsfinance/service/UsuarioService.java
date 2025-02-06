@@ -29,11 +29,11 @@ public class UsuarioService {
         return usuarioRepository.findByNomeUsuario(nomeUsuario);
     }
 
-    public Usuario salvar(Usuario usuario) {
+    public Usuario salvarUsuario(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
 
-    public void deletar(Long id) {
+    public void deletarUsuario(Long id) {
         usuarioRepository.deleteById(id);
     }
 }

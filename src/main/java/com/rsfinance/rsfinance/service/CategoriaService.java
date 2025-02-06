@@ -29,11 +29,11 @@ public class CategoriaService {
         return categoriaRepository.findByUsuarioId(usuarioId);
     }
 
-    public Categoria salvar(Categoria categoria) {
+    public Categoria salvarCategoria(Categoria categoria) {
         return categoriaRepository.save(categoria);
     }
 
-    public void deletar(Long id) {
+    public void deletarCategoria(Long id) {
         categoriaRepository.deleteById(id);
     }
 }

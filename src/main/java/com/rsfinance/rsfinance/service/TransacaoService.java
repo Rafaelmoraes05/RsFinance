@@ -34,11 +34,11 @@ public class TransacaoService {
         return transacaoRepository.findById(id);
     }
     
-    public Transacao salvar(Transacao transacao) {
+    public Transacao salvarTransacao(Transacao transacao) {
         return transacaoRepository.save(transacao);
     }
-    
-    public void deletar(Long id) {
+
+    public void deletarTransacao(Long id) {
         transacaoRepository.deleteById(id);
     }
 }

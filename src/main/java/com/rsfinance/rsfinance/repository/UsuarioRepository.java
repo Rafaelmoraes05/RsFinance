@@ -1,4 +1,4 @@
-package com.rsfinance.rsfinance.model.repository;
+package com.rsfinance.rsfinance.repository;
 
 import java.util.Optional;
 
@@ -9,5 +9,5 @@ import com.rsfinance.rsfinance.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-    Optional<Usuario> findByEmail(String nomeUsuario);
+    Optional<Usuario> findByNomeUsuario(String nomeUsuario);
 }

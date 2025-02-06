@@ -27,10 +27,18 @@ public class Transacao {
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
+    
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
-
+    
+    
+    public Categoria getCategoria() {
+        return categoria;
+    }
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
     
     @Column(nullable = false)
     private BigDecimal valor;
@@ -40,11 +48,11 @@ public class Transacao {
     
     @Column
     private String descricao;
-
+    
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TipoTransacao tipo;
-
+    
     
     //Getters e Setters
     public Long getId() {
@@ -76,5 +84,19 @@ public class Transacao {
     }
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+    
+    public TipoTransacao getTipo() {
+        return tipo;
+    }
+    
+    public void setTipo(TipoTransacao tipo) {
+        this.tipo = tipo;
+    }
+    public Usuario getUsuario() {
+        return usuario;
+    }
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

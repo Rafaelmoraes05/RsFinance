@@ -28,7 +28,7 @@ public class Categoria {
     private Usuario usuario;
 
     @Column(name="criado_em", nullable = false, updatable = false)
-    private LocalDate criadoEm;
+    private LocalDate criadoEm = LocalDate.now();
 
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     private List<Transacao> transacoes;
